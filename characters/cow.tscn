@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dg687hdm5gajf"]
+[gd_scene load_steps=14 format=3 uid="uid://dg687hdm5gajf"]
 
 [ext_resource type="Texture2D" uid="uid://dvai4iur3fe77" path="res://art/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="1_ihupw"]
+[ext_resource type="Script" path="res://characters/cow.gd" id="1_lyu0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itbbg"]
 size = Vector2(16, 9)
@@ -86,6 +87,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(122.235, 45.9425)
 
 [node name="Cow" type="CharacterBody2D"]
+script = ExtResource("1_lyu0e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ihupw")
@@ -107,3 +109,7 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_djfak")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
