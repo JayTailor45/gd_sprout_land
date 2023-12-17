@@ -20,7 +20,7 @@ func _ready():
 	
 func _physics_process(_delta):
 	if(current_state == COW_STATE.WALK):
-		velocity = move_direction * move_speed
+		velocity = move_direction * randi_range(10, 70)
 		move_and_slide()
 
 func select_new_direction():
@@ -39,11 +39,11 @@ func pick_new_state():
 		state_machine.travel("walk")
 		current_state = COW_STATE.WALK
 		select_new_direction()
-		timer.start(walk_time)
+		timer.start(randi_range(0, 3))
 	elif(current_state == COW_STATE.WALK):
 		state_machine.travel("idle")
 		current_state = COW_STATE.IDLE
-		timer.start(idle_time)
+		timer.start(randi_range(0, 5))
 
 
 func _on_timer_timeout():
