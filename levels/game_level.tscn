@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4q652u5tdgbj"]
+[gd_scene load_steps=14 format=3 uid="uid://b4q652u5tdgbj"]
 
 [ext_resource type="PackedScene" uid="uid://c8ukvchelceq6" path="res://characters/player_cat.tscn" id="1_7mnhu"]
 [ext_resource type="Texture2D" uid="uid://bljai60bjul1j" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_cjumm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://crjo3g2fd3w5t" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled Dirt.png" id="4_qtdh8"]
 [ext_resource type="Texture2D" uid="uid://dcrk3s6xnwper" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="5_d4pv4"]
 [ext_resource type="Texture2D" uid="uid://syg63k0gcw5k" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="6_y88me"]
+[ext_resource type="PackedScene" uid="uid://dg687hdm5gajf" path="res://characters/cow.tscn" id="7_gv5mx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac0hj"]
 texture = ExtResource("2_cjumm")
@@ -650,7 +651,7 @@ sources/4 = SubResource("TileSetAtlasSource_fiojb")
 [node name="GameLevel" type="Node2D"]
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_7mnhu")]
-position = Vector2(337, 89)
+position = Vector2(337, 88)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
@@ -667,5 +668,11 @@ layer_1/tile_data = PackedInt32Array(393224, 65537, 2, 327688, 65537, 1, 262152,
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(337, 89)
+position = Vector2(337, 88)
 position_smoothing_enabled = true
+
+[node name="Cow" parent="." instance=ExtResource("7_gv5mx")]
+position = Vector2(214, 207)
+
+[node name="Cow2" parent="." instance=ExtResource("7_gv5mx")]
+position = Vector2(170, 82)
